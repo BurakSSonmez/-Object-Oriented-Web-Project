@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>UEFA Şampiyonlar Ligi</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <h:form>
+                    <ul class="navbar-nav">
+                       <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="index" value="Anasayfa"/>
+                        </li>
+                        <li class="nav-item">
+                            <h:commandLink styleClass="nav-link" action="grouplar" value="Gruplar"/>
+                        </li>
+                        <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="takim" value="Takımlar"/>
+                        </li>
+                        <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="oyuncular" value="Oyuncular"/>
+                        </li>
+                        <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="ceyrekfinal" value="Ceyrek Final"/>
+                        </li>
+                        <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="yarifinal" value="Yari Final"/>
+                        </li>
+                        <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="finall" value="Final"/>
+                        </li>
+                        <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="sampiyon" value="Sampiyon"/>
+                        </li>
+                        <li class="nav-item active">
+                            <h:commandLink styleClass="nav-link" action="transfer" value="Transfer Tavsiye"/>
+                        </li>
+                    </ul>
+                </h:form>
+            </div>      
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h:form>
+                        <h:dataTable styleClass="table table-striped" value="#{ceyrekFinalController.clist}" var="cat">
+                            <h:column>
+                                <f:facet name="header">TUR ID</f:facet>
+                                    #{cat.tur_id}
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">TAKIM ADI</f:facet>
+                                    #{cat.takim_adi}
+
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"> ULKESI</f:facet>
+                                    #{cat.ulkesi}
+                            </h:column>     
+
+                        </h:dataTable>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+    </h:body>
+</html>
+
